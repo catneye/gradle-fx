@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:controller="com.catneye.mainController" xmlns:fx="http://javafx.com/fxml" >
+    <stylesheets>main.css</stylesheets>
+    <top>
+        <HBox fx:id="toolbox" styleClass="bordered" prefWidth="100.0"
+              BorderPane.alignment="TOP_LEFT">
+            <ToolBar fx:id="toolbar" prefWidth="150">
+                <padding>
+                    <Insets top="0" right="5" bottom="0" left="5"/>
+                </padding>
+                <Button fx:id="addButton" text="+" onAction="#addButtonAction"/>
+                <Separator/>
+                <Button fx:id="delButton" text="-" onAction="#delButtonAction"/>
+            </ToolBar>
+        </HBox>
+    </top>
+    <left>
+        <VBox fx:id="list" styleClass="bordered" prefWidth="200.0" 
+              BorderPane.alignment="TOP_CENTER">
+            <Text fx:id="area1" text="Notes list"/>
+            <AnchorPane>
+                <ScrollPane styleClass="bordered" prefHeight="20000"
+                            AnchorPane.topAnchor="0.0" AnchorPane.leftAnchor="0.0" 
+                            AnchorPane.rightAnchor="0.0" AnchorPane.bottomAnchor="0.0">
+                    <ListView fx:id="itemsList" onMouseClicked="#onListViewAction"/>
+                </ScrollPane>
+            </AnchorPane>
+        </VBox>
+    </left>
+    <center>
+        <VBox fx:id="cardItem" styleClass="bordered" visible="false"
+              BorderPane.alignment="CENTER">
+                
+            <Text fx:id="contentEdit" text="Edit note"/>
+            <Label text="Enter Header" />
+            <TextField fx:id="hContentEdit" prefWidth="200.0" />
+            <Label text="Date" />
+            <TextField fx:id="dtContentEdit" prefWidth="200.0" editable="false"/>
+            <Label text="Enter Text" />
+            <TextField fx:id="idContentEdit" visible="false" editable="false"/>
+            <TextField fx:id="iContentEdit" visible="false" editable="false"/>
+                
+            <AnchorPane styleClass="bordered">
+                <VBox 
+                    AnchorPane.topAnchor="0.0" AnchorPane.leftAnchor="0.0" 
+                    AnchorPane.rightAnchor="0.0" AnchorPane.bottomAnchor="0.0">
+                    <ScrollPane styleClass="bordered" prefHeight="20000">
+                        <TextArea fx:id="tContentEdit" />
+                    </ScrollPane>
+                    
+                    <ToolBar fx:id="toolbar" prefWidth="150" >
+                        <padding>
+                            <Insets top="0" right="5" bottom="0" left="5"/>
+                        </padding>
+            
+                        <Button fx:id="okContentEdit" text="OK" onAction="#okContentEditButtonAction"  />
+                        <Separator/>
+                        <Button fx:id="cContentEdit" text="CANCEL" onAction="#cContentEditdelButtonAction" />
+                    </ToolBar>
+                </VBox>
+            </AnchorPane>
+        </VBox>
+    </center>
+    
+</BorderPane>
