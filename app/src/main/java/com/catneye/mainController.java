@@ -55,6 +55,7 @@ public class mainController {
         if (sel != null) {
             itemsList.getItems().remove(sel);
         }
+        this.closeCardItem();
     }
 
     @FXML

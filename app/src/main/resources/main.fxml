@@ -21,17 +21,21 @@
         </HBox>
     </top>
     <left>
-        <VBox fx:id="list" styleClass="bordered" prefWidth="200.0" 
-              BorderPane.alignment="TOP_CENTER">
-            <Text fx:id="area1" text="Notes list"/>
-            <AnchorPane>
-                <ScrollPane styleClass="bordered" prefHeight="20000"
-                            AnchorPane.topAnchor="0.0" AnchorPane.leftAnchor="0.0" 
-                            AnchorPane.rightAnchor="0.0" AnchorPane.bottomAnchor="0.0">
-                    <ListView fx:id="itemsList" onMouseClicked="#onListViewAction"/>
-                </ScrollPane>
-            </AnchorPane>
-        </VBox>
+        <BorderPane fx:id="list" styleClass="bordered"
+                    BorderPane.alignment="TOP_CENTER">
+            <top>
+                <Text fx:id="area1" text="Notes list"/>
+            </top>
+            <center>
+                <AnchorPane>
+                    <ScrollPane styleClass="bordered"  FitToHeight="TRUE" FitToWidth="TRUE"
+                                AnchorPane.topAnchor="0.0" AnchorPane.leftAnchor="0.0" 
+                                AnchorPane.rightAnchor="0.0" AnchorPane.bottomAnchor="0.0">
+                        <ListView fx:id="itemsList" onMouseClicked="#onListViewAction"/>
+                    </ScrollPane>
+                </AnchorPane>
+            </center>
+        </BorderPane>
     </left>
     <center>
         <VBox fx:id="cardItem" styleClass="bordered" visible="false"
@@ -46,24 +50,27 @@
             <TextField fx:id="idContentEdit" visible="false" editable="false"/>
             <TextField fx:id="iContentEdit" visible="false" editable="false"/>
                 
-            <AnchorPane styleClass="bordered">
-                <VBox 
+            <AnchorPane styleClass="bordered" prefHeight="20000.0">
+                <BorderPane 
                     AnchorPane.topAnchor="0.0" AnchorPane.leftAnchor="0.0" 
                     AnchorPane.rightAnchor="0.0" AnchorPane.bottomAnchor="0.0">
-                    <ScrollPane styleClass="bordered" prefHeight="20000">
-                        <TextArea fx:id="tContentEdit" />
-                    </ScrollPane>
-                    
-                    <ToolBar fx:id="toolbar" prefWidth="150" >
-                        <padding>
-                            <Insets top="0" right="5" bottom="0" left="5"/>
-                        </padding>
+                    <center>
+                        <ScrollPane styleClass="bordered" FitToHeight="TRUE" FitToWidth="TRUE">
+                            <TextArea fx:id="tContentEdit"/>
+                        </ScrollPane>
+                    </center>
+                    <bottom>
+                        <ToolBar fx:id="toolbar" prefWidth="150" >
+                            <padding>
+                                <Insets top="0" right="5" bottom="0" left="5"/>
+                            </padding>
             
-                        <Button fx:id="okContentEdit" text="OK" onAction="#okContentEditButtonAction"  />
-                        <Separator/>
-                        <Button fx:id="cContentEdit" text="CANCEL" onAction="#cContentEditdelButtonAction" />
-                    </ToolBar>
-                </VBox>
+                            <Button fx:id="okContentEdit" text="OK" onAction="#okContentEditButtonAction"  />
+                            <Separator/>
+                            <Button fx:id="cContentEdit" text="CANCEL" onAction="#cContentEditdelButtonAction" />
+                        </ToolBar>
+                    </bottom>
+                </BorderPane>
             </AnchorPane>
         </VBox>
     </center>
